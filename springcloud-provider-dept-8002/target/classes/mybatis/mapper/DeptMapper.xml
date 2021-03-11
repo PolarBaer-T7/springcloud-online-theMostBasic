@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.kgc.zhengzeyan.mapper.DeptMapper">
+    <insert id="addDept" parameterType="Dept">
+        insert into db02.dept(dname, db_source)
+        values(#{dname},database());
+    </insert>
+    <select id="queryDeptById" parameterType="Long" resultType="Dept">
+        select *
+        from db02.dept
+        where dept.deptno = #{deptNo};
+    </select>
+    <select id="queryAllDept" resultType="Dept">
+        select *
+        from db02.dept;
+    </select>
+
+</mapper>

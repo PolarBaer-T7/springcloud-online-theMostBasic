@@ -32,7 +32,12 @@ public class DeptConsumerController {
     /*
     由于没有Service层，所以我们请求需要到刚才的URL上去，请求的的前缀都是固定的，所以我们需要一个常量来写死
      */
-    private static final String REST_URL_PREFIX ="http://localhost:8001";
+    /*
+     * private static final String REST_URL_PREFIX ="http://localhost:8001";
+     * Ribbon 我们这里的地址应该是一个变量 通过服务名来访问。
+     */
+    private static final String REST_URL_PREFIX = "localhost:8001";
+    // private static final String REST_URL_PREFIX = "localhost:8001";
 
 
     @RequestMapping("/consumer/add")

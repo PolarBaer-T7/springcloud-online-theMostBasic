@@ -10,9 +10,21 @@
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>springcloud-consumer-dept-80</artifactId>
-
-    <!--消费者只需要实体类+Web-->
     <dependencies>
+
+        <!--Ribbon-->
+        <!--2021.3.11这里的版本有冲突导致Consumer启动不起来。所以换成了NetFlix的Ribbon-->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-netflix-ribbon</artifactId>
+            <version>2.2.7.RELEASE</version>
+        </dependency>
+        <!--Eureka: Ribbon需要从Eureka服务中心获取要拿什么-->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
+        </dependency>
+        <!--消费者只需要实体类+Web-->
 
         <dependency>
             <groupId>cn.kgc.springcloud-online</groupId>
@@ -28,11 +40,6 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-devtools</artifactId>
-        </dependency>
-
-        <dependency>
-            <groupId>org.freemarker</groupId>
-            <artifactId>freemarker</artifactId>
         </dependency>
 
     </dependencies>
